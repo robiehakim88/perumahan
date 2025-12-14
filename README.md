@@ -64,6 +64,66 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# perum
-# perum
-# perumahan
+
+## Aplikasi Perumahan
+
+  Aplikasi perumahan yang dikembangkan menggunakan framework Laravel, bertujuan untuk menyediakan sistem perumahan yang praktis dan efisien dalam pendataan semua warga. Dengan menggunakan aplikasi ini, proses pengumpulan dan pengorganisasian informasi mengenai pemilik rumah dan informasi pengontrak menjadi lebih mudah dan terstruktur. Aplikasi ini memungkinkan pengguna untuk dengan cepat menambahkan, mengedit, dan menghapus data pemilik rumah dan pengontrak, serta laporan penghuni rumah dan pengontrak. Dengan fitur-fitur yang lengkap, aplikasi ini diharapkan membantu mempermudah tugas-tugas administratif Ketua RT terkait dengan pengelolaan warga.
+
+## Requirements
+- [PHP >= 8.2](http://php.net/)
+- [Laravel Framework](https://github.com/laravel/framework)  
+
+## Fitur Aplikasi
+1. Mengelola data pemilik rumah beserta foto pemilik rumah
+2. Mengelola data orang yang mengontrak beserta foto pengontrak
+3. Laporan statistik hunia
+4. Laporan pengontrak
+
+<h2 id="download">💻 Install</h2>
+
+1. Clone repository
+
+```bash
+    git clone https://github.com/robiehakim88/perumahan.git
+```
+
+```bash
+    cd perumahan
+```
+
+```bash
+    composer update
+```
+
+```bash
+    cp .env.example .env
+```
+2. Konfigurasi database melalui `.env`
+
+```bash
+DB_PORT=3306
+DB_DATABASE=xxxx
+DB_USERNAME=root
+DB_PASSWORD=
+```
+3. Migrasi dan symlinks
+
+```bash
+php artisan key:generate
+```
+```bash
+php artisan migrate --seed
+```
+4. Jalankan website
+
+```bash
+php artisan serve
+```
+5. Tambahkan alamat email yang digunakan mendaftar pada file `.env`:
+```bash
+SYSTEM_ADMIN_EMAILS=admin@email.com;other_admin@email.com
+```
+6. Jika fitur upload foto tidak berjalan, hapus folder storage beserta semua isinya yang ada di dalam folder public, lalu gunakan perintah berikut
+```bash
+php artisan storage:link
+```
